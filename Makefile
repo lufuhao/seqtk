@@ -8,6 +8,7 @@ seqtk:seqtk.c khash.h kseq.h
 		$(CC) $(CFLAGS) seqtk.c -o $@ -lz -lm
 
 install:all
+                $(shell if [ ! -d $(BINDIR) ]; then mkdir -p $(BINDIR); fi)
 		install seqtk $(BINDIR)
 
 clean:
